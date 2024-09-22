@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Atualizar - Filme</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <!-- Custom styles for this template-->
+    <link href="../../css/sb-admin-2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion altura-sidebar" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="bi bi-film"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Cinema</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="../../index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Admin
+            </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFilme"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="bi bi-film"></i>
+                    <span>Filme</span>
+                </a>
+                <div id="collapseFilme" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Opções</h6>
+                        <a class="collapse-item" href="../filme/cadastro-filme.html">Cadastro</a>
+                        <a class="collapse-item" href="../filme/listar-filme.html">Lista</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuario"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="bi bi-people"></i>
+                    <span>Usuário</span>
+                </a>
+                <div id="collapseUsuario" class="collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Opções</h6>
+                        <a class="collapse-item" href="../../views/usuario/cadastro-usuario.html">Cadastro</a>
+                        <a class="collapse-item" href="#">Lista</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRelatorios"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Relatórios</span>
+                </a>
+                <div id="collapseRelatorios" class="collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Opções</h6>
+                        <a class="collapse-item" href="#">opção 1</a>
+                        <a class="collapse-item" href="#">opção 2</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content" class="mb-4">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="../../img/undraw_profile_1.svg" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="../../img/undraw_profile_2.svg" alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="../../img/undraw_profile_3.svg" alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Lucas Dias</span>
+                                <img class="img-profile rounded-circle" src="../../img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid mb-4">
+                    <div>
+
+                        <!-- Container do form -->
+                        <div class="container col-xl-10 col-md-12">
+                            <!-- Page Heading -->
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800 cadastrar-filme">Atualizar Filme</h1>
+                            </div>
+
+                            <div class="row">
+                                <!-- início do form -->
+                                <form class="form mb-4" id="formFilme" data-cadFilme>
+                                    <div class="scroll-form col">
+
+                                        <div class="form-group">
+
+                                            <div class="row">
+                                                <div class="form-floating mb-3 col-md-12">
+                                                    <input type="text" class="form-control titulo" id="inputTitulo"
+                                                        placeholder="">
+                                                    <label for="inputTitulo" class="pl-4">Título</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <input type="date" class="form-control estreia" id="inputEstreia"
+                                                        placeholder="">
+                                                    <label for="inputEstreia" class="pl-4">Estreia</label>
+                                                </div>
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <input type="number" class="form-control duracao" id="inputDuracao"
+                                                        placeholder="">
+                                                    <label for="inputDuracao" class="pl-4">Duração (minutos)</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <select class="form-select classificacao" id="inputClassificacao"
+                                                        aria-label="Floating label select example">
+                                                        <option value="">Selecione...</option>
+                                                        <option value="L">Livre</option>
+                                                        <option value="10">10</option>
+                                                        <option value="12">12</option>
+                                                        <option value="14">14</option>
+                                                        <option value="16">16</option>
+                                                        <option value="18">18</option>
+                                                    </select>
+                                                    <label for="inputClassificacao" class="pl-4">Classificação</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <select class="form-select idioma" id="inputIdioma"
+                                                        aria-label="Floating label select example">
+                                                        <option value="">Selecione...</option>
+                                                        <option value="coreano">Coreano</option>
+                                                        <option value="espanhol">Espanhol</option>
+                                                        <option value="frances">Francês</option>
+                                                        <option value="ingles">Inglês</option>
+                                                        <option value="italiano">Italiano</option>
+                                                        <option value="portugues-br">Português-BR</option>
+                                                        <option value="portugues-pt">Português-PT</option>
+                                                        <option value="mandarim">Mandarim</option>
+                                                    </select>
+                                                    <label for="inputIdioma" class="pl-4">Idioma</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <input type="number" step="0.01" class="form-control orcamento"
+                                                        id="inputOrcamento" placeholder="0.00">
+                                                    <label for="inputOrcamento" class="pl-4">Orçamento (U$)</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-4">
+                                                    <input type="number" step="0.01" class="form-control bilheteria"
+                                                        id="inputBilheteria" placeholder="0.00">
+                                                    <label for="inputBilheteria" class="pl-4">Bilheteria (U$)</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-6">
+                                                    <input type="text" step="0.01" class="form-control produtora"
+                                                        id="inputProdutora" placeholder="">
+                                                    <label for="inputProdutora" class="pl-4">Produtora</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-6">
+                                                    <input type="text" class="form-control estudio" id="inputEstudio"
+                                                        placeholder="">
+                                                    <label for="inputEstudio" class="pl-4">Estúdio</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-6">
+                                                    <input type="text" class="form-control diretor" id="inputDiretor"
+                                                        placeholder="">
+                                                    <label for="inputDiretor" class="pl-4">Diretor</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3 col-md-12 col-xl-6">
+                                                    <input type="text" class="form-control roteirista"
+                                                        id="inputRoteirista" placeholder="">
+                                                    <label for="inputRoteirista" class="pl-4">Roteirista</label>
+                                                </div>
+
+                                                <div class="mb-3 col-md-12">
+                                                    <label for="inputTeaser" class="">Teaser</label>
+                                                    <input type="file" class="form-control teaser" id="inputTeaser"
+                                                        placeholder="">
+                                                </div>
+
+                                                <div class="mb-3 col-md-12">
+                                                    <label for="inputPoster" class="">Poster</label>
+                                                    <input type="file" class="form-control poster" id="inputPoster"
+                                                        placeholder="">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <!-- adicionar atores -->
+
+                                        <div class="row">
+                                            <label for="addAtor" class="form-label">Atores:</label>
+                                            <div class="mb-1">
+                                                <input type="text" class="form-control mb-3 col-sm-12 col-xl-6"
+                                                    id="addAtor" placeholder="Nome do ator">
+                                                <button type="button"
+                                                    class="btn btn-primary col-md-2 btn-custom col-md-11 col-xl-4 mx-auto"
+                                                    onclick="adicionaAtor()">Adicionar</button>
+                                            </div>
+                                            <div class="">
+                                                <label for="textAreaAtores" class="form-label"></label>
+                                                <textarea class="form-control fixed-size atores" id="textAreaAtores"
+                                                    readonly></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- fim de adicionar atores -->
+
+
+                                        <label class="mt-3">Gênero do Filme:</label><br>
+                                        <div class="d-flex flex-column flex-md-wrap genero-altura">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="action"
+                                                    value="Ação">
+                                                <label class="form-check-label" for="action">Ação</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="adventure"
+                                                    value="Aventura">
+                                                <label class="form-check-label" for="adventure">Aventura</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="comedy"
+                                                    value="Comédia">
+                                                <label class="form-check-label" for="comedy">Comédia</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="drama"
+                                                    value="Drama">
+                                                <label class="form-check-label" for="drama">Drama</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="fantasy"
+                                                    value="Fantasia">
+                                                <label class="form-check-label" for="fantasy">Fantasia</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="horror"
+                                                    value="Terror">
+                                                <label class="form-check-label" for="horror">Terror</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="mystery"
+                                                    value="Mistério">
+                                                <label class="form-check-label" for="mystery">Mistério</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="romance"
+                                                    value="Romance">
+                                                <label class="form-check-label" for="romance">Romance</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="sci-fi"
+                                                    value="Ficção Científica">
+                                                <label class="form-check-label" for="sci-fi">Ficção Científica</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="thriller"
+                                                    value="Thriller">
+                                                <label class="form-check-label" for="thriller">Thriller</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="animation"
+                                                    value="Animação">
+                                                <label class="form-check-label" for="animation">Animação</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="documentary"
+                                                    value="Documentário">
+                                                <label class="form-check-label" for="documentary">Documentário</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="musical"
+                                                    value="Musical">
+                                                <label class="form-check-label" for="musical">Musical</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="biography"
+                                                    value="Biografia">
+                                                <label class="form-check-label" for="biography">Biografia</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="policial"
+                                                    value="Policial">
+                                                <label class="form-check-label" for="policial">Policial</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="espionagem"
+                                                    value="Espionagem">
+                                                <label class="form-check-label" for="espionagem">Espionagem</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 mt-3">
+                                            <label for="exampleTextarea" class="form-label">Sinopse</label>
+                                            <textarea class="form-control sinopse" id="textAreaSinopse" rows="5"
+                                                maxlength="600"></textarea>
+                                            <span id="contador">0</span>/600 caracteres.
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg btn-primary" id="salvar">Salvar</button>
+                                    <button type="button" class="btn btn-lg btn-danger">Cancelar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- generos e textos-->
+            </div>
+            
+            <footer class="sticky-footer mt-3">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Lucas Dias 2024</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- End of Main Content -->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../js/controllers/atualizaFilmeController.js" type="module"></script>
+    
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+/* tela de cadastro */
+.altura-sidebar {
+    height: 100%;
+}
+
+.custom-width {
+    width: 50%;
+}
+
+form {
+    height: 200px;
+}
+
+.form-select-color {
+    border: 1px solid #d1d3e2;
+    color: #6e707e;
+}
+
+.btn-custom {
+    height: 2.2rem;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.tabela-filmes-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn-excluir, .btn-editar {
+    border: none;
+    color: #4e73df;
+    background-color: white;
+}
+
+.btn-excluir:hover, .btn-editar:hover {
+    color: #1e3a90;
+    background-color: rgb(197, 245, 229);
+    border-radius: 5px;
+    
+}
+
+.btn-excluir i {
+    width: 100%;
+}
+
+.scroll-form {
+    max-height: 300px;
+    max-width: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 770px){
+    .genero-altura {
+        max-height: 120px;
+        box-sizing: border-box;
+    } 
+}
+
+.link-home, .link-lista {
+    background-color: #4e73df;
+    border-radius: 3px;
+    color: #d1d3e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 3rem;
+    padding: 1rem;
+    transition: 300ms;
+    margin-bottom: 2px;
+    
+}
+
+.link-home:hover, .link-lista:hover {
+    background-color: #3059d4;
+    color: #d1d3e2;
+    text-decoration: none;
+}
+
+.img-check {
+    width: 1rem;
+    max-width: 10rem;
+    margin: 0 auto;
+}
